@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.RoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.Role">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="roleKey" column="roleKey" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="delFlag" column="delFlag" jdbcType="INTEGER"/>
+            <result property="createBy" column="createBy" jdbcType="BIGINT"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="updateBy" jdbcType="BIGINT"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,role_key,
+        status,del_flag,create_by,
+        create_time,update_by,update_time,
+        remark
+    </sql>
+
+</mapper>

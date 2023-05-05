@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.PickMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.Pick">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userid" column="userId" jdbcType="BIGINT"/>
+            <result property="pickname" column="pickName" jdbcType="VARCHAR"/>
+            <result property="picktype" column="pickType" jdbcType="VARCHAR"/>
+            <result property="pickdate" column="pickDate" jdbcType="TIMESTAMP"/>
+            <result property="pickplace" column="pickPlace" jdbcType="VARCHAR"/>
+            <result property="contact" column="contact" jdbcType="VARCHAR"/>
+            <result property="reporttime" column="reportTime" jdbcType="TIMESTAMP"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="isdelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="img" column="img" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,pickName,
+        pickType,pickDate,pickPlace,
+        contact,reportTime,description,
+        isDelete,img
+    </sql>
+
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.SysLogLoginMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.SysLogLogin">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="operation" column="operation" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="userAgent" column="user_agent" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="creatorName" column="creator_name" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,operation,status,
+        user_agent,ip,creator_name,
+        creator,create_date
+    </sql>
+</mapper>

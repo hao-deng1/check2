@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.TagMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.Tag">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="tagname" column="tagName" jdbcType="VARCHAR"/>
+            <result property="isdelete" column="isDelete" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,tagName,isDelete
+    </sql>
+</mapper>

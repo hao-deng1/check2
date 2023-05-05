@@ -1,0 +1,13 @@
+package com.lostAndFind.project.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.lostAndFind.project.model.entity.SysLogLogin;
+
+/**
+* @author Asus
+* @description 针对表【sys_log_login(登录日志)】的数据库操作Service
+* @createDate 2022-11-13 20:39:02
+*/
+public interface SysLogLoginService extends IService<SysLogLogin> {
+
+}

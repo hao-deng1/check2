@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.LostMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.Lost">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="lostName" column="lostName" jdbcType="VARCHAR"/>
+            <result property="lostType" column="lostType" jdbcType="VARCHAR"/>
+            <result property="lostDate" column="lostDate" jdbcType="TIMESTAMP"/>
+            <result property="contact" column="contact" jdbcType="VARCHAR"/>
+            <result property="reportTime" column="reportTime" jdbcType="TIMESTAMP"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="img" column="img" jdbcType="VARCHAR"/>
+            <result property="business" column="business" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,lostName,
+        lostType,lostDate,contact,
+        reportTime,description,isDelete,
+        img,business
+    </sql>
+</mapper>

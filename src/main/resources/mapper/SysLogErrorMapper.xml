@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.SysLogErrorMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.SysLogError">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="requestUri" column="request_uri" jdbcType="VARCHAR"/>
+            <result property="requestMethod" column="request_method" jdbcType="VARCHAR"/>
+            <result property="requestParams" column="request_params" jdbcType="VARCHAR"/>
+            <result property="userAgent" column="user_agent" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="errorInfo" column="error_info" jdbcType="VARCHAR"/>
+            <result property="creator" column="creator" jdbcType="BIGINT"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,request_uri,request_method,
+        request_params,user_agent,ip,
+        error_info,creator,create_date
+    </sql>
+</mapper>

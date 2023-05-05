@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lostAndFind.project.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.lostAndFind.project.model.entity.Menu">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="menuName" column="menuName" jdbcType="VARCHAR"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="component" column="component" jdbcType="VARCHAR"/>
+            <result property="visible" column="visible" jdbcType="CHAR"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="perms" column="perms" jdbcType="VARCHAR"/>
+            <result property="parentId" column="parentId" jdbcType="BIGINT"/>
+            <result property="createBy" column="createBy" jdbcType="BIGINT"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="updateBy" jdbcType="BIGINT"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="isDelete" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,menuName,path,
+        component,visible,status,
+        perms,parentId,createBy,
+        createTime,updateBy,updateTime,
+        delFlag,remark
+    </sql>
+    <select id="selectPermsByUserId" resultType="java.lang.String">
+        SELECT
+            DISTINCT m.`perms`
+        FROM
+            sys_user_role ur
+                LEFT JOIN `sys_role` r ON ur.`roleId` = r.`id`
+                LEFT JOIN `sys_role_menu` rm ON ur.`roleId` = rm.`roleId`
+                LEFT JOIN `sys_menu` m ON m.`id` = rm.`menuId`
+        WHERE
+            userId = 1
+          AND r.`status` = 0
+          AND m.`status` = 0
+    </select>
+</mapper>
